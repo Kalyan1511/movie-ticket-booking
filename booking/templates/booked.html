@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booked Slots</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        a {
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Booked Slots</h1>
+
+<a href="/">⬅ Back</a>
+
+<table>
+    <tr>
+        <th>Slot</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Booked At</th>
+    </tr>
+
+    {% for b in bookings %}
+    <tr>
+        <td>{{ b.slot.time }}</td>
+        <td>{{ b.name }}</td>
+        <td>{{ b.email }}</td>
+        <td>{{ b.booked_at }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
